@@ -5,5 +5,8 @@ ro.lmk.use_psi=true
 ro.lmk.psi_partial_stall_ms=70
 ro.lmk.debug=true
 
+# Graphics
+debug.sf.hw=1
+
 # USAP
 persist.device_config.runtime_native.usap_pool_enabled=true
