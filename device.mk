@@ -356,8 +356,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 ifeq ($(PRODUCT_ORS_DU)),true)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/themes/overlay
-
+    vendor/themes/overlay \
+    $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
+    $(LOCAL_PATH)/overlay-lineage/packages/apps/Snap
 endif
 
 # Partitions
