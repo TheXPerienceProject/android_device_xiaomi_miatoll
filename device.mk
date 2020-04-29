@@ -316,8 +316,14 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0 \
     libjson \
     librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
+    libxml2
+
+# VNDK
+# FIXME: master: compat for libprotobuf
+# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
 # RCS
 PRODUCT_PACKAGES += \
