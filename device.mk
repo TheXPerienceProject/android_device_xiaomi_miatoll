@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
     libsmomoconfig.qti \
     libcomposerextn.qti
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.2-service.clearkey
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -185,7 +189,7 @@ PRODUCT_COPY_FILES += \
 # Freeform window
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
-	
+
 # Fstab
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
