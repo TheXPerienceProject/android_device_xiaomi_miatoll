@@ -144,8 +144,9 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
 # Display QTI future usage
-# PRODUCT_PACKAGES +=  \
+PRODUCT_PACKAGES +=  \
     libdisplayconfig \
+    libdisplayconfig.vendor \
     libqdMetaData \
     libqdMetaData.system \
     libdrm \
@@ -451,5 +452,8 @@ PRODUCT_BOOT_JARS += \
 
 # commn
 TARGET_COMMON_QTI_COMPONENTS := \
+    av \
     bt \
-    perf
+    perf \
+    telephony \
+    wfd
