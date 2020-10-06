@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
     libsmomoconfig.qti \
     libcomposerextn.qti
 
+# Display
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.clearkey
