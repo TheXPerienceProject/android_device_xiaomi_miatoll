@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ANT+ (system)
 product/lib/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
@@ -7,6 +8,11 @@ product/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 product/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
+=======
+# Audio HAL extension
+vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
+>>>>>>> d7b3bcf... [BLOBS] sm6250-common: remove audio hal override
 
 # DPM
 product/bin/dpmd
