@@ -58,19 +58,27 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    Bluetooth \
-    BluetoothExt \
-    libbluetooth_qti \
-    libbt-vendor
+    audio.bluetooth.default \
+    audio.hearing_aid.default \
+    android.hardware.bluetooth.audio@2.0-impl
+
+# Bluetooth QTI
+BT := javax.btobex
+BT += libattrib_static
+BT += libbt-vendor
+BT += libbthost_if
+BT += libbt-logClient
+BT += bt_logger
+BT += libbluetooth_qti
+BT += libbt-hidlclient
+BT += BluetoothExt
+BT += libbtconfigstore
+BT += audio.a2dp.default_qti
+BT += audio.hearing_aid.default_qti
 
 PRODUCT_PACKAGES += \
-    libbt-hidlclient \
-    javax.btobex \
-    libattrib_static \
-    libbt-logClient \
-    bt_logger \
-    libbt-hidlclient \
-    libbtconfigstore \
+    $(BT) \
+    liba2dpoffload \
     com.qualcomm.qti.bluetooth_audio@1.0 \
     vendor.qti.hardware.bluetooth_audio@2.0 \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
