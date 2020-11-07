@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
     Bluetooth \
     bt_logger \
     libbtconfigstore \
+    libbluetooth_qti \
     vendor.qti.hardware.btconfigstore@1.0 \
     vendor.qti.hardware.bluetooth_dun@1.0
 
