@@ -1827,3 +1827,11 @@ vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
+
+# NFC from - joyeuse V11.0.7.0.QJZMIXM
+vendor/bin/nqnfcinfo
+vendor/lib/libsn100u_fw.so
+vendor/etc/sn100u_pnx_ese_3.pnscr
+vendor/etc/sn100u_pnx_ndi.pnscr
+vendor/etc/sn100u_pnx_pcv.pnscr
+vendor/etc/sn100u_pnx_sst.pnscr
