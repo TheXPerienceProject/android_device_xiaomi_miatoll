@@ -204,6 +204,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     disable_configstore
+    vendor.qti.hardware.display.mapper@2.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
