@@ -144,8 +144,8 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service \
     android.hardware.broadcastradio@1.0-impl
 
-# Display QTI
-PRODUCT_PACKAGES +=  \
+# Display QTI future usage
+# PRODUCT_PACKAGES +=  \
     libdisplayconfig \
     libqdMetaData \
     libqdMetaData.system \
@@ -250,14 +250,14 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    libnfc \
     com.android.nfc_extras \
-    com.nxp.nfc.nq \
-    NQNfcNci \
+    NfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    SecureElement \
     Tag \
-    vendor.nxp.hardware.nfc@1.2-service \
-
-PRODUCT_BOOT_JARS += \
-    com.nxp.nfc.nq
+    android.hardware.nfc@1.2-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/libnfc-nci.conf \
