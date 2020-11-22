@@ -63,12 +63,24 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
+# Ant+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    libantradio \
+    antradio_app \
+    com.qualcomm.qti.ant@1.0
+
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio \
     qcom.fmradio.xml
+
+PRODUCT_PROPERTY_OVERRIDES += vendor.hw.fm.init=0
 
 # fwk-detect
 PRODUCT_PACKAGES += \
@@ -94,10 +106,13 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     libbtconfigstore \
     libbluetooth_qti \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0 \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.bluetooth_dun@1.0 \
-    vendor.qti.hardware.bluetooth_dun@1.0.vendor
+    vendor.qti.hardware.bluetooth_dun@1.0.vendor \
+    vendor.qti.hardware.bluetooth_dun-V1.0-java
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -128,6 +143,34 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service \
     android.hardware.broadcastradio@1.0-impl
+
+# Display QTI
+PRODUCT_PACKAGES +=  \
+    libdisplayconfig \
+    libqdMetaData \
+    libqdMetaData.system \
+    libdrm \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.2 \
+    vendor.display.config@1.3 \
+    vendor.display.config@1.4 \
+    vendor.display.config@1.5 \
+    vendor.display.config@1.6 \
+    vendor.display.config@1.7 \
+    vendor.display.config@1.8 \
+    vendor.display.config@1.9 \
+    vendor.display.config@1.10 \
+    vendor.display.config@1.11 \
+    vendor.display.config@1.12 \
+    vendor.display.config@1.13 \
+    vendor.display.config@1.14 \
+    vendor.display.config@1.15 \
+    vendor.display.config@1.16 \
+    libsmomo.qti \
+    liblayerext.qti \
+    libsmomoconfig.qti \
+    libcomposerextn.qti
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -182,6 +225,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl
+
+# IPACM
+PRODUCT_PACKAGES += \
+    IPACM_cfg.xml \
+    ipacm \
+    ipacm.rc
 
 # IR
 PRODUCT_COPY_FILES += \
@@ -398,14 +447,3 @@ PRODUCT_BOOT_JARS += \
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     perf
-
-###################################################################################
-# This is the End of target.mk file.
-# Now, Pickup other split product.mk files:
-###################################################################################
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/*.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/vendor/*.mk)
-###################################################################################
-# Pickup blobs to satisfy LMKD
-#$(call inherit-product, vendor/qcom/common/performance/perf-common.mk)
-###################################################################################

@@ -80,9 +80,9 @@ TARGET_SCREEN_DENSITY := 440
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # FM
+BOARD_HAVE_QCOM_FM := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAS_QCA_FM_SOC := cherokee
-BOARD_HAVE_QCOM_FM := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -169,6 +169,7 @@ TARGET_BOARD_PLATFORM := atoll
 
 #POWER
 BOARD_PROVIDES_POWER_HAL := true
+TARGET_USES_NON_LEGACY_POWERHAL := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
@@ -233,11 +234,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit proprietary blobs
 -include vendor/xiaomi/sm6250-common/BoardConfigVendor.mk
-
-#################################################################################
-# This is the End of BoardConfig.mk file.
-# Now, Pickup other split Board.mk files:
-#################################################################################
--include vendor/qcom/defs/board-defs/system/*.mk
--include vendor/qcom/defs/board-defs/vendor/*.mk
-#################################################################################
