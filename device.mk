@@ -171,6 +171,11 @@ PRODUCT_PACKAGES += \
     libsmomoconfig.qti \
     libcomposerextn.qti
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3-service.widevine \
+    android.hardware.drm@1.3-service.clearkey
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
