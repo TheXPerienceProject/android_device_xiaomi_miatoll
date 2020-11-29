@@ -447,9 +447,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # commn
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
