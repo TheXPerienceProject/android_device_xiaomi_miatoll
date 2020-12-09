@@ -537,6 +537,5 @@ PRODUCT_BOOT_JARS += \
 
 # commn
 TARGET_COMMON_QTI_COMPONENTS := \
-    av \
     bt \
     perf
