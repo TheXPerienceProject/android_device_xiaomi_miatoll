@@ -1,2 +1,0 @@
-#============= thermal-engine ==============
-allow thermal-engine vendor_data_file:dir read;
