@@ -40,8 +40,8 @@ PRODUCT_PACKAGES += \
     libtinycompress
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl:32 \
-    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.audio@2.0-service
 
@@ -79,6 +79,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+
+# Component override
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
+    $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+
+# ConsumerIR
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
@@ -142,7 +151,6 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 PRODUCT_PACKAGES += \
-    SnapdragonCamera 
     libgui_vendor \
     Snap
 
@@ -208,6 +216,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6250
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
@@ -339,14 +350,9 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage \
-    $(LOCAL_PATH)/overlay-system
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
-    $(LOCAL_PATH)/overlay-lineage/packages/apps/Snap \
-    $(LOCAL_PATH)/overlay-system
 
 ifeq ($(PRODUCT_ORS_DU)),true)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
@@ -367,15 +373,12 @@ PRODUCT_PACKAGES += libqti_vndfwk_detect
 PRODUCT_PACKAGES += libvndfwk_detect_jni.qti.vendor
 PRODUCT_PACKAGES += libqti_vndfwk_detect.vendor
 
-# Radio
+# VNDK
+# FIXME: master: compat for libprotobuf
+# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.1 \
-    android.hardware.secure_element@1.0 \
-    libjson \
-    librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
@@ -418,8 +421,12 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.1 \
     android.hardware.secure_element@1.0 \
     librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
+    libxml2
+
+# Servicetracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.0.vendor \
+    vendor.qti.hardware.servicetracker@1.1.vendor
 
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -438,6 +445,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
+
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -497,6 +508,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     libwpa_client \
     WifiOverlay \
+    wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -520,5 +532,6 @@ PRODUCT_BOOT_JARS += \
 
 # commn
 TARGET_COMMON_QTI_COMPONENTS := \
+    av \
     bt \
     perf
