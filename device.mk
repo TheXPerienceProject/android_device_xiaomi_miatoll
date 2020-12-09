@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.bluetooth_dun@1.0 \
     vendor.qti.hardware.bluetooth_dun@1.0.vendor \
-    vendor.qti.hardware.bluetooth_dun-V1.0-java
+    vendor.qti.hardware.bluetooth_dun-V1.0-java \
     audio.bluetooth.default \
     BluetoothQti
 
