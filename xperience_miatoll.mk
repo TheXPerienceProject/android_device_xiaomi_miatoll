@@ -15,3 +15,6 @@ PRODUCT_MODEL := SM6250
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Match stock build fingerprint
+PRODUCT_OVERRIDE_FINGERPRINT :=  Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys
