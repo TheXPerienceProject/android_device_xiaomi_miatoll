@@ -52,17 +52,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/thermal/thermal-engine-map-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-joyeuse.conf \
     $(LOCAL_PATH)/thermal/thermal-engine-normal-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-joyeuse.conf \
     $(LOCAL_PATH)/thermal/thermal-engine-camera-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-joyeuse.conf
-
-###################################################################################
-# This is the End of target.mk file.
-# Now, Pickup other split product.mk files:
-###################################################################################
-#$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/*.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/app_mms_product.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/app_qtiSoundRecorder_product.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/app_snapcam_system_product.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/app_snapMusic_product.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/display-product-system.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/system/nfc-system-product.mk)
-$(call inherit-product-if-exists, vendor/qcom/defs/product-defs/vendor/*.mk)
-###################################################################################
