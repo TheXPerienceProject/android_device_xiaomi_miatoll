@@ -27,6 +27,3 @@ ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest_joyeuse.xml
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := curtana,excalibur,gram,joyeuse
-
-# Power
-TARGET_PROVIDES_POWERHAL := true
