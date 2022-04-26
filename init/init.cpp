@@ -82,6 +82,16 @@ void load_device_properties() {
             fp,
             fp_desc,
             "Redmi", "curtana", "Redmi Note 9S", "Redmi Note 9S");
+        } else if (region == "Global_PA") {
+            set_device_props(
+            fp,
+            fp_desc,
+            "Redmi", "curtana", "Redmi Note 9S", "Redmi Note 9S");
+        } else if (region == "Japan") {
+            set_device_props(
+            fp,
+            fp_desc,
+            "Redmi", "curtana", "Redmi Note 9S", "Redmi Note 9S");
         } else if (region == "India") {
             set_device_props(
             fp,
@@ -109,7 +119,6 @@ void load_device_properties() {
 void vendor_load_properties() {
     load_common_properties();
     load_device_properties();
-
 
 	//  SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
